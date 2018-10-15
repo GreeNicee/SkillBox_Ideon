@@ -13,11 +13,8 @@ public class Coffee {
         System.out.println("Ваш баланс: " + moneyAmount);
 
         for (int i = 0; i <= 3; i++) {
-            System.out.println(drinks[i] + " стоимость: " + prices[i] + " статус: " + booChecker(moneyAmount >= prices[i]));
+            System.out.println(drinks[i] + " стоимость: " + prices[i] + " статус: " + (
+                    moneyAmount >= prices[i] ? "доступно" : "недоступно, необходимо еще " + (prices[i] - moneyAmount)));
         }
-    }
-
-    private static String booChecker(boolean flag) {
-        return flag ? "Доступно" : "Недоступно";
     }
 }
