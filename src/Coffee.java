@@ -9,15 +9,11 @@ public class Coffee {
                 120, 140, 20, 40
         };
 
-        boolean[] drinksFlags = {false, false, false, false};
-
         System.out.println("Кофе-машина");
         System.out.println("Ваш баланс: " + moneyAmount);
 
         for (int i = 0; i <= 3; i++) {
-            if (moneyAmount >= prices[i])
-                drinksFlags[i] = true;
-            System.out.println(drinks[i] + " стоимость: " + prices[i] + " статус: " + booChecker(drinksFlags[i]));
+            System.out.println(drinks[i] + " стоимость: " + prices[i] + " статус: " + booChecker(moneyAmount >= prices[i]));
         }
     }
 
